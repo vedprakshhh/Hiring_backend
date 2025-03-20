@@ -1,0 +1,14 @@
+Back/
+  ├── main.py                  # Main application entry point
+  ├── config.py                # Configuration and database connection
+  ├── models.py                # Pydantic models shared across endpoints
+  ├── database.py              # Database initialization and connection functions
+  ├── routers/                 # Package for all route modules
+  │   ├── __init__.py          # Makes routers a package
+  │   ├── job_descriptions.py  # Job description endpoints
+  │   ├── job_skills.py        # Skill-related endpoints
+  │   ├── recruiters.py        # Recruiter endpoints
+  │   └── stats.py             # Stats and analytics endpoints
+  └── utils/                   # Utility functions
+      ├── __init__.py
+      └── document_processor.py # Your existing document processor
