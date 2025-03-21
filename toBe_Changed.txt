@@ -1,0 +1,19 @@
+fastHire99-backend/
+├── app/_init_.py
+│   ├── core/
+│   │   ├── config.py
+│   │   └── prompt_engineering.py
+│   ├── models/
+│   │   └── evaluation.py
+│   ├── routes/
+│   │   ├── _init_.py
+│   │   ├── resume_evaluation.py
+│   │   └── 
+│   ├── services/
+│   │   ├── llm_service.py
+│   │   └── _init_.py
+│   ├── templates/                  
+│   ├── utils/_init_.py
+│   │   └── helpers.py
+│   ├── main.py
+├── requirements.txt
