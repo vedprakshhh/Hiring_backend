@@ -95,6 +95,18 @@ def init_db():
                 )
             """)
         
+        cursor.execute("""
+        CREATE TABLE IF NOT EXISTS Jd_Resume_Final_feedback (
+            id SERIAL PRIMARY KEY,
+            Jd_id VARCHAR(255) NOT NULL,
+            resume1 VARCHAR(255) NOT NULL,
+            resume2 VARCHAR(255) NOT NULL,
+            Final_Feedback TEXT NOT NULL,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+        """)
+        
+
         table_exists = cursor.fetchone()['exists']
         if not table_exists:
                 # Create job_recruiter_assignments table
@@ -145,8 +157,6 @@ def init_db():
                     JOIN 
                         recruiters r ON a.recruiter_id = r.id
                 """)
-                
-        conn.commit()
     finally:
         cursor.close()
         conn.close()

@@ -1,11 +1,9 @@
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-import os
 import io
+import os
 import re
-import json
-import tempfile
-import shutil
+import uuid
 from dotenv import load_dotenv
 import google.generativeai as genai
 import fitz  # PyMuPDF
@@ -15,10 +13,10 @@ from typing import Optional, List, Dict, Any
 import psycopg2
 from psycopg2.extras import RealDictCursor
 from pydantic import BaseModel
-import uvicorn
-import requests
 import json
+from datetime import datetime
 from fastapi import FastAPI, HTTPException
+from database import get_db_connection
 
 # Load environment variables
 load_dotenv()

@@ -52,3 +52,23 @@ class Assignment(BaseModel):
     job_title: Optional[str] = None
     recruiter_name: Optional[str] = None
     company: Optional[str] = None
+
+class ResumeFeedbackCreate(BaseModel):
+    Jd_id: str
+    resume1: str
+    resume2: str
+    Final_Feedback: str
+
+class ResumeFeedback(ResumeFeedbackCreate):
+    id: int
+    created_at: datetime
+
+class ResumeFeedbackUpdate(BaseModel):
+    Final_Feedback: Optional[str] = None
+
+class Employee(BaseModel):
+    id: str
+    name: str
+    phone_number: str
+    skills: str
+    role: str

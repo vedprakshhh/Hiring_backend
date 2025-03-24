@@ -4,9 +4,8 @@ import uvicorn
 from dotenv import load_dotenv
 import google.generativeai as genai
 import os
-
 # Import routers
-from routers import job_descriptions, job_skills, recruiters, stats, assignment
+from routers import job_descriptions, job_skills, recruiters, stats, assignment, resume
 from database import init_db, create_tables
 
 # Load environment variables
@@ -38,6 +37,7 @@ app.include_router(job_skills.router)
 app.include_router(recruiters.router)
 app.include_router(stats.router)
 app.include_router(assignment.router)
+app.include_router(resume.router)
 
 @app.get("/")
 async def root():
